@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ลงนามถวายพระพร</title>
+  <style>
+    body {
+      background-color: #fffbe6;
+      font-family: 'Sarabun', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fffacd;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #b8860b;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #ffd700;
+      color: #333;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ลงนามถวายพระพร</h1>
+    <form id="autoSubmitForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdQdaLQPcHZuV_4D5a9qcvskAiSi_swecl-W24myPxKjwfnjw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+      <!-- Replace entry.xxxxxx with actual field names -->
+      <label for="fname">ชื่อ</label>
+      <input type="text" name="entry.1234567890" pattern="[A-Za-zก-๙\s]+" title="กรุณากรอกเฉพาะตัวอักษร" required>
+
+      <label for="lname">นามสกุล</label>
+      <input type="text" name="entry.0987654321" pattern="[A-Za-zก-๙\s]+" title="กรุณากรอกเฉพาะตัวอักษร" required>
+
+      <button type="submit">ส่งคำถวายพระพร</button>
+    </form>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <script>
+    var submitted = false;
+    document.getElementById('autoSubmitForm').addEventListener('submit', function() {
+      setTimeout(function () {
+        document.getElementById('autoSubmitForm').reset();
+        alert('ส่งคำถวายพระพรเรียบร้อยแล้ว');
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
